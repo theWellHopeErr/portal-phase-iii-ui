@@ -1,0 +1,43 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:loader="sap.ui.loader"
+	controllerName="Portal_Phase_III.quality.controller.Qual_Login" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:f="sap.f"
+	xmlns:form="sap.ui.layout.form" xmlns:card="sap.f.cards">
+	<Page title="QUAL" showHeader="false">
+		<content>
+			<VBox fitContainer="true" alignItems="Center">
+				<Title class="sapUiMediumMargin" text="Quality Portal" titleStyle="H1"></Title>
+				<f:Card class="sapUiSmallMargin" width="300px" id='loginCard'>
+					<f:header>
+						<card:Header title="Login to your account" iconSrc="sap-icon://account"/>
+					</f:header>
+					<f:content>
+						<VBox fitContainer="true" alignItems="Center" class="sapUiSmallMargin" justifyContent="SpaceBetween">
+							<form:Form id="FormChange354" editable="true">
+								<form:layout>
+									<form:ResponsiveGridLayout labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4"
+										emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false"/>
+								</form:layout>
+								<form:formContainers>
+									<form:FormContainer>
+										<form:formElements>
+											<form:FormElement label="Plant">
+												<form:fields>
+													<Input id="plant" valueLiveUpdate="true"/>
+												</form:fields>
+											</form:FormElement>
+											<form:FormElement label="Password">
+												<form:fields>
+													<Input id="password" valueLiveUpdate="true" type="Password"/>
+												</form:fields>
+											</form:FormElement>
+										</form:formElements>
+									</form:FormContainer>
+								</form:formContainers>
+							</form:Form>
+							<Button type="Emphasized" text="Login" press="onLogin"/>
+						</VBox>
+					</f:content>
+				</f:Card>
+			</VBox>
+		</content>
+	</Page>
+</mvc:View>

@@ -1,0 +1,43 @@
+<core:FragmentDefinition class="sapUiSizeCompact" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" controllerName="Portal_Phase_III.quality.controller.Qual_UsageDecisionList">
+	<Dialog id="dialog-usage-decision" title="Usage Decision" type="Standard" afterClose="dialogAfterclose">
+		<buttons>
+			<Button id="submit-btn" text="Submit" press="onSubmit" type="Emphasized"></Button>
+			<Button text="Cancel" press="closeDialog"></Button>
+		</buttons>
+		<content>
+			<FlexBox alignItems="Center" justifyContent="Center">
+				<GenericTag id="dialog-message" visible="false" class="sapUiSmallMarginBottom sapUiSmallMarginTop " text="Fill all required fields"
+					status="Warning"/>
+			</FlexBox>
+			<f:Form id="result-record-form" editable="true">
+				<f:layout>
+					<f:ResponsiveGridLayout labelSpanXL="4" labelSpanL="4" labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0"
+						emptySpanM="0" emptySpanS="0" columnsXL="3" columnsL="2" columnsM="2" singleContainerFullSize="false"/>
+				</f:layout>
+				<f:formContainers>
+					<f:FormContainer>
+						<f:formElements >
+							<f:FormElement label="Inspection Lot">
+								<f:fields><Input id="Insplot" value="{UdDialogModel>/Insplot}" editable="false"/></f:fields>
+							</f:FormElement>
+							<f:FormElement label="Selected Set*">
+								<f:fields><Input id="UdSelectedSet" value="{UdDialogModel>/UdSelectedSet}"/></f:fields>
+							</f:FormElement>
+							<f:FormElement label="Code*">
+								<f:fields>
+									<ComboBox id="UdCode" value="{UdDialogModel>/UdCode}" required="true" items="{ path: '/values', sorter: { path: 'text' } }">
+										<core:ListItem key="{Value}" text="{Desc}"/>
+									</ComboBox>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="Code Group">
+								<f:fields><Input id="UdCodeGroup" value="{UdDialogModel>/UdCodeGroup}"/></f:fields>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+				</f:formContainers>
+			</f:Form>
+		</content>
+	</Dialog>
+</core:FragmentDefinition>

@@ -1,0 +1,57 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:t="sap.ui.table"
+	controllerName="Portal_Phase_III.quality.controller.Qual_ResultRecordsList" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="Quality Portal">
+		<headerContent>
+			<core:Icon src="sap-icon://visits" tooltip="Log Out" press="logout" color="#e40000" class="sapUiSmallMarginEnd" size="1.2em"/>
+		</headerContent>
+		<content>
+			<HBox fitContainer="true">
+				<VBox justifyContent="Center" class="sapUiSmallMargin" width="3em">
+					<core:Icon size="3em" class="back-arrow-btn" tooltip="Back" src="sap-icon://sys-back-2" press="back" color="#346187"></core:Icon>
+				</VBox>
+				<VBox justifyContent="Center" class="sapUiSmallMargin" width="85%">
+					<t:Table id="table" class="center-table" rows="{RrecModel>/list}" visibleRowCount="14" enableCellFilter="{ui>/cellFilterOn}"
+						cellClick="onSelect">
+						<t:extension>
+							<OverflowToolbar>
+								<Title text="Result Records List"/>
+								<ToolbarSpacer/>
+								<ToolbarSeparator/>
+								<SearchField placeholder="Filter" value="{ui>/globalFilter}" search="filterGlobally" width="15rem"/>
+							</OverflowToolbar>
+						</t:extension>
+						<t:columns>
+							<t:Column id="Insplot" width="10rem" filterProperty="Insplot"><Label text="Inspection Lot"/>
+								<t:template><Text text="{RrecModel>Insplot}"/></t:template>
+							</t:Column>
+							<t:Column id="InsplotSize" width="10rem" filterProperty="InsplotSize"><Label text="Inspection Lot Size"/>
+								<t:template><Text text="{RrecModel>InsplotSize}"/></t:template>
+							</t:Column>
+							<t:Column id="SysStatus" width="10rem" filterProperty="SysStatus"><Label text="Status"/>
+								<t:template><Text text="{RrecModel>SysStatus}"/></t:template>
+							</t:Column>
+							<t:Column id="Material" width="10rem" filterProperty="Material"><Label text="Material No."/>
+								<t:template><Text text="{RrecModel>Material}"/></t:template>
+							</t:Column>
+							<t:Column id="TxtMat" width="10rem" filterProperty="TxtMat"><Label text="Descripton"/>
+								<t:template><Text text="{RrecModel>TxtMat}"/></t:template>
+							</t:Column>
+							<t:Column id="CreatDat" width="10rem" filterProperty="CreatDat"><Label text="Created Date"/>
+								<t:template><Text text="{RrecModel>CreatDat}"/></t:template>
+							</t:Column>
+							<t:Column id="InspType" width="10rem" filterProperty="InspType"><Label text="Inspection Type"/>
+								<t:template><Text text="{RrecModel>InspType}"/></t:template>
+							</t:Column>
+							<t:Column id="Vendor" width="10rem" filterProperty="Vendor"><Label text="Vendor Id"/>
+								<t:template><Text text="{RrecModel>Vendor}"/></t:template>
+							</t:Column>
+						</t:columns>
+					</t:Table>
+				</VBox>
+				<VBox justifyContent="Center" class="sapUiSmallMargin" width="3em">
+					<core:Icon size="3em" class="next-arrow-btn" tooltip="Next" src="sap-icon://sys-back-2" press="next" color="#346187"></core:Icon>
+				</VBox>
+			</HBox>
+		</content>
+	</Page>
+</mvc:View>

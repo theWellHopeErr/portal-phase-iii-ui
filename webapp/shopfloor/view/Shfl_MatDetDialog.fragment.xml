@@ -1,0 +1,86 @@
+<core:FragmentDefinition class="sapUiSizeCompact" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout"
+	controllerName="Portal_Phase_III.shopfloor.controller.Shfl_MatList" xmlns:f="sap.ui.layout.form">
+	<Dialog title="Material Details" type="Standard" contentWidth="50%" contentHeight="70%">
+		<endButton>
+			<Button text="Close" press="closeDetailsDialog"></Button>
+		</endButton>
+		<content>
+			<f:Form id="FormDisplay354wideDual" editable="false">
+				<f:layout>
+					<f:ResponsiveGridLayout labelSpanXL="4" labelSpanL="3" labelSpanM="6" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="4"
+						emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="1" columnsM="1"/>
+				</f:layout>
+				<f:formContainers>
+					<f:FormContainer title="MRP List">
+						<f:formElements>
+							<f:FormElement label="Material No.">
+								<f:fields><Text text="{/MrpList/MatNo}"/></f:fields>
+							</f:FormElement>
+							<f:FormElement label="MRP Date">
+								<f:fields><Text text="{/MrpList/MrpDate}"/></f:fields>
+							</f:FormElement>
+							<f:FormElement label="Material Type">
+								<f:fields><Text text="{/MrpList/MatlType}"/></f:fields>
+							</f:FormElement>
+							<f:FormElement label="ISO code for unit of measurement">
+								<f:fields><Text text="{/MrpList/BaseUomIso}"/></f:fields>
+							</f:FormElement>
+							<f:FormElement label="Low-Level Code">
+								<f:fields><Text text="{/MrpList/LlCode}"/></f:fields>
+							</f:FormElement>
+							<f:FormElement label="MRP procedure">
+								<f:fields><Text text="{/MrpList/MrpProcedure}"/></f:fields>
+							</f:FormElement>
+							<f:FormElement label="Purchasing Group">
+								<f:fields><Text text="{/MrpList/PurGroup}"/></f:fields>
+							</f:FormElement>
+							<f:FormElement label="Plant stock / only plant segment">
+								<f:fields><Text text="{/MrpList/PlntStock}"/></f:fields>
+							</f:FormElement>
+							<f:FormElement label="Stock Days' Supply Without Receipts">
+								<f:fields><Text text="{/MrpList/Dayssupply}"/></f:fields>
+							</f:FormElement>
+							<f:FormElement label="First Receipt Days' Supply">
+								<f:fields><Text text="{/MrpList/Reqdayssupply}"/></f:fields>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+					<f:FormContainer title="MRP Stock List">
+						<f:formElements>
+							<f:FormElement label="Stock in Quality Inspection">
+								<f:fields><Text text="{/MrpStockList/QualInspection}"/></f:fields>
+							</f:FormElement>
+							<f:FormElement label="Reservations">
+								<f:fields><Text text="{/MrpStockList/Reservations}"/></f:fields>
+							</f:FormElement>
+							<f:FormElement label="Purchase orders">
+								<f:fields><Text text="{/MrpStockList/PurOrders}"/></f:fields>
+							</f:FormElement>
+							<f:FormElement label="Purchase requisitions">
+								<f:fields><Text text="{/MrpStockList/PurReq}"/></f:fields>
+							</f:FormElement>
+							<f:FormElement label="Planned orders">
+								<f:fields><Text text="{/MrpStockList/PlndOrder}"/></f:fields>
+							</f:FormElement>
+							<f:FormElement label="Stock transfer release orders">
+								<f:fields><Text text="{/MrpStockList/StkTrnfRel}"/></f:fields>
+							</f:FormElement>
+							<f:FormElement label="Warehouse stock / total (including special stor.locs)">
+								<f:fields><Text text="{/MrpStockList/TotalStck}"/></f:fields>
+							</f:FormElement>
+							<f:FormElement label="Total of promised receipts">
+								<f:fields><Text text="{/MrpStockList/FixedRecpt}"/></f:fields>
+							</f:FormElement>
+							<f:FormElement label="Total of planned receipts">
+								<f:fields><Text text="{/MrpStockList/PlReceipt}"/></f:fields>
+							</f:FormElement>
+							<f:FormElement label=" Total of promised issues">
+								<f:fields><Text text="{/MrpStockList/FixedIssues}"/></f:fields>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+				</f:formContainers>
+			</f:Form>
+		</content>
+	</Dialog>
+</core:FragmentDefinition>

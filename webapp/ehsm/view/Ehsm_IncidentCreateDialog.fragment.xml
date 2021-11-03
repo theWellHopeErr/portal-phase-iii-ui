@@ -1,0 +1,65 @@
+<core:FragmentDefinition class="sapUiSizeCompact" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" controllerName="Portal_Phase_III.shopfloor.controller.Ehsm_IncidentList">
+	<Dialog id="dialog-incident-create" title="Create Incident Record" type="Standard" stretch="true" afterClose="dialogAfterclose">
+		<buttons>
+			<Button text="Create" press="createIncident" type="Emphasized"></Button>
+			<Button text="Cancel" press="closeDetailsDialog"></Button>
+		</buttons>
+		<content>
+			<f:Form id="incident-create-form" editable="true">
+				<f:layout>
+					<f:ResponsiveGridLayout labelSpanXL="4" labelSpanL="4" labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0"
+						emptySpanM="0" emptySpanS="0" columnsXL="3" columnsL="2" columnsM="2" singleContainerFullSize="false"/>
+				</f:layout>
+				<f:formContainers>
+					<f:FormContainer title="General Information">
+						<f:formElements >
+							<f:FormElement label="Created By">
+								<f:fields><Input id="Crnam" value="{IncidentModel>/details/Crnam}"/></f:fields>
+							</f:FormElement>
+							<f:FormElement label="Created On">
+								<f:fields><Text id="Crdat" text="{/date}"/></f:fields>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+					<f:FormContainer title="Incident Details">
+						<f:formElements>
+							<f:FormElement label="Incident Type">
+								<f:fields><Input id="Iatype" value="{IncidentModel>/details/Iatype}"/></f:fields>
+							</f:FormElement>
+							<f:FormElement label="Damage Type">
+								<f:fields><Input id="Dmtype" value="{IncidentModel>/details/Dmtype}"/></f:fields>
+							</f:FormElement>
+							<f:FormElement label="Event Description">
+								<f:fields><Input id="Evdesc" value="{IncidentModel>/details/Evdesc}"/></f:fields>
+							</f:FormElement>
+							<f:FormElement label="Valid From">
+								<f:fields><DatePicker id="Valfr" value="{IncidentModel>/details/Valfr}" valueFormat="dd MMM yyyy"/></f:fields>
+							</f:FormElement>
+							<f:FormElement label="Valid To">
+								<f:fields><DatePicker id="Valto" value="{IncidentModel>/details/Valto}" valueFormat="dd MMM yyyy"/></f:fields>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+					<f:FormContainer title="Equipment Details">
+						<f:formElements >
+							<f:FormElement label="Equipment No.">
+								<f:fields><Input id="Equnr" value="{IncidentModel>/details/Equnr}"/></f:fields>
+							</f:FormElement>
+							<f:FormElement label="Equipment Description">
+								<f:fields><Input id="Eqdesc" value="{IncidentModel>/details/Eqdesc}"/></f:fields>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+					<f:FormContainer title="Result and Remarks">
+						<f:formElements>
+							<f:FormElement label="Incident Result">
+								<f:fields><TextArea id="Invresult" value="{IncidentModel>/details/Invresult}"/></f:fields>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+				</f:formContainers>
+			</f:Form>
+		</content>
+	</Dialog>
+</core:FragmentDefinition>

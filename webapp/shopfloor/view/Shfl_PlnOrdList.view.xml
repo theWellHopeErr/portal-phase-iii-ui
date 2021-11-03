@@ -1,0 +1,53 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:t="sap.ui.table" xmlns:u="sap.ui.unified" controllerName="Portal_Phase_III.shopfloor.controller.Shfl_PlnOrdList">
+	<Page title="Planned Order List" showNavButton="true" navButtonPress="goBack">
+		<headerContent>
+			<core:Icon src="sap-icon://visits" tooltip="Log Out" press="logout" color="#e40000" class="sapUiSmallMarginEnd" size="1.2em"/>
+		</headerContent>
+		<content>
+			<VBox class="sapUiMediumMargin">
+				<t:Table id="table" rows="{/OrderList}" visibleRowCount="14" enableCellFilter="{ui>/cellFilterOn}" cellClick="onSelect">
+					<t:extension>
+						<OverflowToolbar >
+							<Title text="Planned Orders"/>
+							<ToolbarSpacer/>
+							<ToolbarSeparator/>
+							<Button icon="sap-icon://add" tooltip="New Order" press="openCreateDialog" type="Emphasized"></Button>
+							<ToolbarSeparator/>
+							<SearchField placeholder="Filter" value="{ui>/globalFilter}" search="filterGlobally" width="15rem"/>
+						</OverflowToolbar>
+					</t:extension>
+					<t:columns>
+						<t:Column id="PlannedorderNum" width="10rem" filterProperty="PlannedorderNum"><Label text="Order No."/>
+							<t:template><Text text="{PlannedorderNum}"/></t:template>
+						</t:Column>
+						<t:Column id="Material" width="10rem" filterProperty="Material"><Label text="Material No."/>
+							<t:template><Text text="{Material}"/></t:template>
+						</t:Column>
+						<t:Column id="OrderType" width="10rem" filterProperty="OrderType"><Label text="Order Type"/>
+							<t:template><Text text="{OrderType}"/></t:template>
+						</t:Column>
+						<t:Column id="ProcurementType" width="10rem" filterProperty="ProcurementType"><Label text="Procurement Type"/>
+							<t:template><Text text="{ProcurementType}"/></t:template>
+						</t:Column>
+						<t:Column id="TotalPlordQty" width="10rem" filterProperty="TotalPlordQty"><Label text="Ordered Quantity"/>
+							<t:template><Text text="{TotalPlordQty}"/></t:template>
+						</t:Column>
+						<t:Column id="OrderStartDate" width="10rem" filterProperty="OrderStartDate"><Label text="Start Date"/>
+							<t:template><Text text="{OrderStartDate}"/></t:template>
+						</t:Column>
+						<t:Column id="OrderFinDate" width="10rem" filterProperty="OrderFinDate"><Label text="Finish Date"/>
+							<t:template><Text text="{OrderFinDate}"/></t:template>
+						</t:Column>
+						<t:Column id="ReservNo" width="10rem" filterProperty="ReservNo"><Label text="Reservation No."/>
+							<t:template><Text text="{ReservNo}"/></t:template>
+						</t:Column>
+						<t:Column id="ObjectType" width="10rem" filterProperty="ObjectType"><Label text="Object Type"/>
+							<t:template><Text text="{ObjectType}"/></t:template>
+						</t:Column>
+					</t:columns>
+				</t:Table>
+			</VBox>
+		</content>
+	</Page>
+</mvc:View>

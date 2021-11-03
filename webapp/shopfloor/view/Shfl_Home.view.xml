@@ -1,0 +1,35 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+	controllerName="Portal_Phase_III.shopfloor.controller.Shfl_Home" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:f="sap.f"
+	xmlns:card="sap.f.cards">
+	<Page title="Portal Phase III">
+			<headerContent>
+			<core:Icon src="sap-icon://visits" tooltip="Log Out" press="logout" color="#e40000" class="sapUiSmallMarginEnd" size="1.2em"/>
+		</headerContent>
+		<content>
+			<VBox>
+				<HBox class="sapUiResponsiveContentPadding" justifyContent="Center">
+					<Title text="Shop Floor Portal" titleStyle="H1"></Title>
+				</HBox>
+				<VBox fitContainer="true" alignItems="Center" justifyContent="Center">
+					<f:Card class="sapUiMediumMargin" width="500px">
+						<f:header>
+							<card:Header title="Planned Orders" subtitle="To view and create new Planned orders" iconSrc="sap-icon://customer-order-entry"
+								press="goToPlnOrd"/>
+						</f:header>
+					</f:Card>
+					<f:Card class="sapUiMediumMargin" width="500px">
+						<f:header>
+							<card:Header title="Production Orders" subtitle="To view all Production orders" iconSrc="sap-icon://order-status" press="goToProdOrd"/>
+						</f:header>
+					</f:Card>
+					<f:Card class="sapUiMediumMargin" width="500px">
+						<f:header>
+							<card:Header title="Material Logs" subtitle="To view all Materials available in the plant" iconSrc="sap-icon://activity-items"
+								press="goToMatLog"/>
+						</f:header>
+					</f:Card>
+				</VBox>
+			</VBox>
+		</content>
+	</Page>
+</mvc:View>

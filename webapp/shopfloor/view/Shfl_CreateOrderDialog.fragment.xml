@@ -1,0 +1,54 @@
+<core:FragmentDefinition class="sapUiSizeCompact" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout"
+	controllerName="Portal_Phase_III.shopfloor.controller.Shfl_PlnOrdList" xmlns:f="sap.ui.layout.form">
+	<Dialog id="dialog-create-order" title="Create Planned Order" type="Standard" afterClose="dialogAfterclose">
+		<content>
+			<FlexBox alignItems="Center" justifyContent="Center">
+				<GenericTag id="dialog-message" visible="false" class="sapUiSmallMarginBottom sapUiSmallMarginTop " text="Fill all required fields"
+					status="Warning"/>
+			</FlexBox>
+			<f:Form editable="true">
+				<f:layout>
+					<f:ResponsiveGridLayout labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4"
+						emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false"/>
+				</f:layout>
+				<f:formContainers>
+					<f:FormContainer>
+						<f:formElements>
+							<f:FormElement label="Planned Order Profile">
+								<f:fields>
+									<ComboBox id="PldordProfile" required="true" items="{ path: '/values', sorter: { path: 'text' } }">
+										<core:ListItem key="{Value}" text="{Desc}"/>
+									</ComboBox>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="Material No.">
+								<f:fields>
+									<Input id="MaterialField" required="true"/>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="Quantity">
+								<f:fields>
+									<Input id="TotalPlordQty" required="true"/>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="Start Date">
+								<f:fields>
+									<DatePicker id="OrderStartDate" placeholder="Enter Start Date"/>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="End Date">
+								<f:fields>
+									<DatePicker id="OrderFinDate" placeholder="Enter Finish Date"/>
+								</f:fields>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+				</f:formContainers>
+			</f:Form>
+		</content>
+		<buttons>
+			<Button id="create-btn" text="Create" type="Emphasized" press="createOrder"></Button>
+			<Button text="Cancel" press="closeCreateDialog"></Button>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

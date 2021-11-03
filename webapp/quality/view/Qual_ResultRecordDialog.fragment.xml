@@ -1,0 +1,48 @@
+<core:FragmentDefinition class="sapUiSizeCompact" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" controllerName="Portal_Phase_III.quality.controller.Qual_ResultRecordsList">
+	<Dialog id="dialog-result-record" title="Result Record" type="Standard" afterClose="dialogAfterclose">
+		<buttons>
+			<Button id="submit-btn" text="Submit" press="onSubmit" type="Emphasized"></Button>
+			<Button text="Cancel" press="closeDialog"></Button>
+		</buttons>
+		<content>
+			<FlexBox alignItems="Center" justifyContent="Center">
+				<GenericTag id="dialog-message" visible="false" class="sapUiSmallMarginBottom sapUiSmallMarginTop " text="Fill all required fields"
+					status="Warning"/>
+			</FlexBox>
+			<f:Form id="result-record-form" editable="true">
+				<f:layout>
+					<f:ResponsiveGridLayout labelSpanXL="4" labelSpanL="4" labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0"
+						emptySpanM="0" emptySpanS="0" columnsXL="3" columnsL="2" columnsM="2" singleContainerFullSize="false"/>
+				</f:layout>
+				<f:formContainers>
+					<f:FormContainer>
+						<f:formElements >
+							<f:FormElement label="Inspection Lot">
+								<f:fields><Input editable="false" id="Insplot" value="{RrecDialogModel>/Insplot}"/></f:fields>
+							</f:FormElement>
+							<f:FormElement label="Inspection Operation*">
+								<f:fields><Input id="Inspoper" value="{RrecDialogModel>/Inspoper}"/></f:fields>
+							</f:FormElement>
+							<f:FormElement label="Inspection Lot Character No.*">
+								<f:fields><Input id="Inspchar" value="{RrecDialogModel>/Inspchar}"/></f:fields>
+							</f:FormElement>
+							<f:FormElement label="Result Valuation">
+								<f:fields><Input id="Evaluation" value="{RrecDialogModel>/Evaluation}"/></f:fields>
+							</f:FormElement>
+							<f:FormElement label="No. of Defects">
+								<f:fields><Input id="Defects" value="{RrecDialogModel>/Defects}"/></f:fields>
+							</f:FormElement>
+							<f:FormElement label="No. of Values above Tolerance Limit">
+								<f:fields><Input id="ValsAbove" value="{RrecDialogModel>/ValsAbove}"/></f:fields>
+							</f:FormElement>
+							<f:FormElement label="No. of Values below Tolerance Limit">
+								<f:fields><Input id="ValsBelow" value="{RrecDialogModel>/ValsBelow}"/></f:fields>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+				</f:formContainers>
+			</f:Form>
+		</content>
+	</Dialog>
+</core:FragmentDefinition>

@@ -1,0 +1,55 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="Portal_Phase_III.controller.Landing"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:f="sap.f" xmlns:card="sap.f.cards" xmlns:l="sap.ui.layout">
+	<Page title="Title" showHeader="False">
+		<content>
+			<l:ResponsiveSplitter defaultPane="default">
+				<l:PaneContainer>
+					<l:SplitPane>
+						<l:layoutData>
+							<l:SplitterLayoutData size="{sizes>/pane1}"/>
+						</l:layoutData>
+						<Panel height="100%">
+							<VBox fitContainer="true" justifyContent="Center">
+								<VBox class="sapUiMediumMargin" alignItems="End">
+									<Title titleStyle="H1" text="Portal Phase III"></Title>
+									<Title titleStyle="H4" text="Developed By"></Title>
+									<Title titleStyle="H4" text="Suryarajan S"></Title>
+								</VBox>
+							</VBox>
+						</Panel>
+					</l:SplitPane>
+					<l:SplitPane>
+						<l:layoutData>
+							<l:SplitterLayoutData size="{sizes>/pane1}"/>
+						</l:layoutData>
+						<Panel height="100%">
+							<VBox fitContainer="true" alignItems="Center" justifyContent="Center">
+								<f:Card class="sapUiMediumMargin" width="500px">
+									<f:header>
+										<card:Header title="Shop Floor Portal"
+											subtitle="This portal is used for maintaining the data of all the production orders and planned orders carried out in a shop floor of an enterprise."
+											iconSrc="sap-icon://retail-store" press="goToSHFL"/>
+									</f:header>
+								</f:Card>
+								<f:Card class="sapUiMediumMargin" width="500px">
+									<f:header>
+										<card:Header title="EHSM Portal"
+											subtitle="This portal is used for maintaining the data of all the production orders and planned orders carried out in a shop floor of an enterprise."
+											iconSrc="sap-icon://e-care" press="goToEHSM"/>
+									</f:header>
+								</f:Card>
+								<f:Card class="sapUiMediumMargin" width="500px">
+									<f:header>
+										<card:Header title="Quality Portal"
+											subtitle="This portal is used for maintaining the data of all the production orders and planned orders carried out in a shop floor of an enterprise."
+											iconSrc="sap-icon://activity-2" press="goToQUAL"/>
+									</f:header>
+								</f:Card>
+							</VBox>
+						</Panel>
+					</l:SplitPane>
+				</l:PaneContainer>
+			</l:ResponsiveSplitter>
+		</content>
+	</Page>
+</mvc:View>

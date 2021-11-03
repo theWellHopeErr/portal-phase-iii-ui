@@ -1,0 +1,302 @@
+{
+	"_version": "1.7.0",
+	"sap.app": {
+		"id": "Portal_Phase_III",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"sourceTemplate": {
+			"id": "servicecatalog.connectivityComponent",
+			"version": "0.0.0"
+		},
+		"dataSources": {
+			"ZSSR_SHFL_ODATA_SRV": {
+				"uri": "/sap/opu/odata/sap/ZSSR_SHFL_ODATA_SRV/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/ZSSR_SHFL_ODATA_SRV/metadata.xml"
+				}
+			},
+			"ZSSR_EHSM_ODATA_SRV": {
+				"uri": "/sap/opu/odata/sap/ZSSR_EHSM_ODATA_SRV/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/ZSSR_EHSM_ODATA_SRV/metadata.xml"
+				}
+			},
+			"ZSSR_QUAL_ODATA_SRV": {
+				"uri": "/sap/opu/odata/sap/ZSSR_QUAL_ODATA_SRV/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/ZSSR_QUAL_ODATA_SRV/metadata.xml"
+				}
+			}
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": ["sap_hcb", "sap_belize", "sap_bluecrystal"]
+	},
+	"sap.ui5": {
+		"rootView": {
+			"viewName": "Portal_Phase_III.view.Root",
+			"type": "XML"
+		},
+		"dependencies": {
+			"minUI5Version": "1.30.0",
+			"libs": {
+				"sap.ui.core": {},
+				"sap.m": {},
+				"sap.ui.layout": {},
+				"sap.ushell": {},
+				"sap.collaboration": {},
+				"sap.ui.comp": {},
+				"sap.uxap": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "Portal_Phase_III.i18n.i18n"
+				}
+			}
+		},
+		"resources": {
+			"css": [{
+				"uri": "css/style.css"
+			}]
+		},
+		"routing": {
+			"config": {
+				"viewPath": "Portal_Phase_III.view",
+				"controlId": "root",
+				"viewLevel": 1,
+				"controlAggregation": "pages",
+				"routerClass": "sap.m.routing.Router"
+			},
+			"targets": {
+				"Target_Landing": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearAggregation": true,
+					"viewName": "Landing",
+					"viewLevel": 1
+				},
+				"Target_Shfl_Login": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearAggregation": true,
+					"viewName": "Shfl_Login",
+					"viewLevel": 2,
+					"viewPath": "Portal_Phase_III.shopfloor.view"
+				},
+				"Target_Ehsm_Login": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearAggregation": true,
+					"viewName": "Ehsm_Login",
+					"viewPath": "Portal_Phase_III.ehsm.view",
+					"viewLevel": 2
+				},
+				"Target_Qual_Login": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearAggregation": true,
+					"viewName": "Qual_Login",
+					"viewLevel": 2,
+					"viewPath": "Portal_Phase_III.quality.view"
+				},
+				"Target_Shfl_Home": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearAggregation": true,
+					"viewName": "Shfl_Home",
+					"viewLevel": 3,
+					"viewPath": "Portal_Phase_III.shopfloor.view"
+				},
+				"Target_Qual_Home": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearAggregation": true,
+					"viewName": "Qual_Home",
+					"viewLevel": 3,
+					"viewPath": "Portal_Phase_III.quality.view"
+				},
+				"Target_Ehsm_Home": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearAggregation": true,
+					"viewName": "Ehsm_Home",
+					"viewLevel": 3,
+					"viewPath": "Portal_Phase_III.ehsm.view"
+				},
+				"Target_Shfl_PlnOrdList": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearAggregation": true,
+					"viewName": "Shfl_PlnOrdList",
+					"viewLevel": 4,
+					"viewPath": "Portal_Phase_III.shopfloor.view"
+				},
+				"Target_Shfl_ProdOrdList": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearAggregation": true,
+					"viewName": "Shfl_ProdOrdList",
+					"viewLevel": 4,
+					"viewPath": "Portal_Phase_III.shopfloor.view"
+				},
+				"Target_Shfl_MatList": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearAggregation": true,
+					"viewName": "Shfl_MatList",
+					"viewLevel": 4,
+					"viewPath": "Portal_Phase_III.shopfloor.view"
+				},
+				"Target_Ehsm_IncidentList": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearAggregation": true,
+					"viewName": "Ehsm_IncidentList",
+					"viewLevel": 4,
+					"viewPath": "Portal_Phase_III.ehsm.view"
+				},
+				"Target_Ehsm_RiskAsmtList": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearAggregation": true,
+					"viewName": "Ehsm_RiskAsmtList",
+					"viewLevel": 4,
+					"viewPath": "Portal_Phase_III.ehsm.view"
+				},
+				"Target_Qual_ResultRecordsList": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearAggregation": true,
+					"viewName": "Qual_ResultRecordsList",
+					"viewLevel": 4,
+					"viewPath": "Portal_Phase_III.quality.view"
+				},
+				"Target_Qual_UsageDecisionList": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearAggregation": true,
+					"viewName": "Qual_UsageDecisionList",
+					"viewLevel": 4,
+					"viewPath": "Portal_Phase_III.quality.view"
+				}
+			},
+			"routes": [{
+				"name": "Target_Landing",
+				"pattern": "",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["Target_Landing"]
+			}, {
+				"name": "Target_Shfl_Home",
+				"pattern": "shopfloor",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["Target_Shfl_Home"]
+			}, {
+				"name": "Target_Shfl_Login",
+				"pattern": "shopfloor/login",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["Target_Shfl_Login"]
+			}, {
+				"name": "Target_Shfl_PlnOrdList",
+				"pattern": "shopfloor/planned-orders",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["Target_Shfl_PlnOrdList"]
+			}, {
+				"name": "Target_Shfl_ProdOrdList",
+				"pattern": "shopfloor/prod-orders",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["Target_Shfl_ProdOrdList"]
+			}, {
+				"name": "Target_Shfl_MatList",
+				"pattern": "shopfloor/material-list",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["Target_Shfl_MatList"]
+			}, {
+				"name": "Target_Ehsm_Home",
+				"pattern": "ehsm",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["Target_Ehsm_Home"]
+			}, {
+				"name": "Target_Ehsm_Login",
+				"pattern": "ehsm/login",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["Target_Ehsm_Login"]
+			}, {
+				"name": "Target_Ehsm_IncidentList",
+				"pattern": "ehsm/incidents",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["Target_Ehsm_IncidentList"]
+			}, {
+				"name": "Target_Ehsm_RiskAsmtList",
+				"pattern": "ehsm/risk",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["Target_Ehsm_RiskAsmtList"]
+			}, {
+				"name": "Target_Qual_Login",
+				"pattern": "quality",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["Target_Qual_Login"]
+			}, {
+				"name": "Target_Qual_Home",
+				"pattern": "quality/home",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["Target_Qual_Home"]
+			}, {
+				"name": "Target_Qual_ResultRecordsList",
+				"pattern": "quality/result-records",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["Target_Qual_ResultRecordsList"]
+			}, {
+				"name": "Target_Qual_UsageDecisionList",
+				"pattern": "quality/usage-decision",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["Target_Qual_UsageDecisionList"]
+			}]
+		}
+	}
+}

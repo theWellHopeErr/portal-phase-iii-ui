@@ -1,0 +1,27 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:t="sap.ui.table" xmlns:u="sap.ui.unified" controllerName="Portal_Phase_III.shopfloor.controller.Shfl_MatList">
+	<Page title="Material List" showNavButton="true" navButtonPress="goBack">
+		<headerContent>
+			<core:Icon src="sap-icon://visits" tooltip="Log Out" press="logout" color="#e40000" class="sapUiSmallMarginEnd" size="1.2em"/>
+		</headerContent>
+		<content>
+			<FlexBox class="sapUiMediumMargin" justifyContent="Center" alignContent="Center">
+				<t:Table class="center-table" id="table" rows="{/MaterialList}" width="60%" visibleRowCount="14" enableCellFilter="{ui>/cellFilterOn}" cellClick="onSelect">
+					<t:extension>
+						<OverflowToolbar >
+							<Title id="title" text="Materials"/><ToolbarSpacer/><ToolbarSeparator/><SearchField placeholder="Filter" value="{ui>/globalFilter}" search="filterGlobally" width="15rem"/>
+						</OverflowToolbar>
+					</t:extension>
+					<t:columns>
+						<t:Column id="Material" width="25%" filterProperty="Material"><Label text="Material No."/>
+							<t:template><Text text="{Material}"/></t:template>
+						</t:Column>
+						<t:Column id="MatlDesc" width="35%" filterProperty="MatlDesc"><Label text="Description"/>
+							<t:template><Text text="{MatlDesc}"/></t:template>
+						</t:Column>
+					</t:columns>
+				</t:Table>
+			</FlexBox>
+		</content>
+	</Page>
+</mvc:View>

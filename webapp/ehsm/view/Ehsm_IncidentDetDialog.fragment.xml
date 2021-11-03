@@ -1,0 +1,15 @@
+<core:FragmentDefinition class="sapUiSizeCompact" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout"
+	controllerName="Portal_Phase_III.shopfloor.controller.Ehsm_IncidentList" xmlns:t="sap.ui.table">
+	<Dialog id="dialog-incident-det" title="{= ${/editable}===false?'View':'Edit'} Incident Details" type="Standard" stretch="true"
+		afterClose="dialogAfterclose">
+		<buttons>
+			<Button text="Edit" press="showEdit" type="Emphasized" visible="{= ${/editable}===false }"></Button>
+			<Button text="Close" press="closeDetailsDialog" visible="{= ${/editable} === false }"></Button>
+			<Button text="Update" press="updateIncident" type="Emphasized" visible="{= ${/editable} === true }"></Button>
+			<Button text="Cancel" press="showDisplay" visible="{= ${/editable} === true }"></Button>
+		</buttons>
+		<content>
+			<Text text="{IncidentModel>/details/Crnam}"></Text>
+		</content>
+	</Dialog>
+</core:FragmentDefinition>

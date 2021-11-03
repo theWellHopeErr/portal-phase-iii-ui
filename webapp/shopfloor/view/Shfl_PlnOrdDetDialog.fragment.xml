@@ -1,0 +1,45 @@
+<core:FragmentDefinition class="sapUiSizeCompact" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout"
+	controllerName="Portal_Phase_III.shopfloor.controller.Shfl_PlnOrdList" xmlns:t="sap.ui.table">
+	<Dialog id="dialog-plnord-det" title="Planned Order Details" type="Standard" stretch="true" afterClose="dialogAfterclose">
+		<endButton>
+			<Button text="Close" press="closeDetailsDialog"></Button>
+		</endButton>
+		<content>
+			<FlexBox class="sapUiMediumMargin" justifyContent="Center" alignContent="Center">
+				<t:Table id="table" rows="{/ComponentList}" enableCellFilter="{ui>/cellFilterOn}">
+					<t:extension>
+						<OverflowToolbar >
+							<Title text="Components in this Planned Order"/>
+						</OverflowToolbar>
+					</t:extension>
+					<t:columns>
+						<t:Column id="BomItemNumber" width="25%" filterProperty="BomItemNumber"><Label text="BOM Item No."/>
+							<t:template><Text text="{BomItemNumber}"/></t:template>
+						</t:Column>
+						<t:Column id="Material" width="25%" filterProperty="Material"><Label text="Material No."/>
+							<t:template><Text text="{Material}"/></t:template>
+						</t:Column>
+						<t:Column id="ItemCat" width="25%" filterProperty="ItemCat"><Label text="Item Category"/>
+							<t:template><Text text="{ItemCat}"/></t:template>
+						</t:Column>
+						<t:Column id="MatlDesc" width="25%" filterProperty="MatlDesc"><Label text="Description"/>
+							<t:template><Text text="{MatlDesc}"/></t:template>
+						</t:Column>
+						<t:Column id="ReqQuan" width="25%" filterProperty="ReqQuan"><Label text="Quantity"/>
+							<t:template><Text text="{ReqQuan}"/></t:template>
+						</t:Column>
+						<t:Column id="ReqDate" width="25%" filterProperty="ReqDate"><Label text="Required Date"/>
+							<t:template><Text text="{ReqDate}"/></t:template>
+						</t:Column>
+						<t:Column id="BaseUom" width="25%" filterProperty="BaseUom"><Label text="Base Unit of Measure"/>
+							<t:template><Text text="{BaseUom}"/></t:template>
+						</t:Column>
+						<t:Column id="MrpType" width="25%" filterProperty="MrpType"><Label text="MRP Type"/>
+							<t:template><Text text="{MrpType}"/></t:template>
+						</t:Column>
+					</t:columns>
+				</t:Table>
+			</FlexBox>
+		</content>
+	</Dialog>
+</core:FragmentDefinition>

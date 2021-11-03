@@ -1,0 +1,50 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:t="sap.ui.table"
+	controllerName="Portal_Phase_III.ehsm.controller.Ehsm_RiskAsmtList" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="Risk Assessment List" showNavButton="true" navButtonPress="goBack">
+		<headerContent>
+			<core:Icon src="sap-icon://visits" tooltip="Log Out" press="logout" color="#e40000" class="sapUiSmallMarginEnd" size="1.2em"/>
+		</headerContent>
+		<content>
+			<VBox class="sapUiMediumMargin">
+				<t:Table id="table" class="center-table" rows="{RiskAsmtModel>/list}" visibleRowCount="14" enableCellFilter="{ui>/cellFilterOn}"
+					cellClick="onSelect">
+					<t:extension>
+						<OverflowToolbar >
+							<Title text="Risk Assessment"/>
+							<ToolbarSpacer/>
+							<ToolbarSeparator/>
+							<ToolbarSpacer/>
+							<SearchField placeholder="Enter an Agent" value="{/agent}" search="onSearch" width="60rem"/>
+						</OverflowToolbar>
+					</t:extension>
+					<t:columns>
+						<t:Column id="Recn" width="9rem"><Label text="Record No."/>
+							<t:template><Text text="{RiskAsmtModel>Recn}"/></t:template>
+						</t:Column>
+						<t:Column id="Eptype" width="9rem"><Label text="Agent Type"/>
+							<t:template><Text text="{RiskAsmtModel>Eptype}"/></t:template>
+						</t:Column>
+						<t:Column id="Erstatus" width="9rem"><Label text="Status"/>
+							<t:template><Text text="{RiskAsmtModel>Erstatus}"/></t:template>
+						</t:Column>
+						<t:Column id="Severe" width="8rem"><Label text="Severity"/>
+							<t:template><Text text="{RiskAsmtModel>Severe}"/></t:template>
+						</t:Column>
+						<t:Column id="Crdat" width="9rem"><Label text="Created On"/>
+							<t:template><Text text="{RiskAsmtModel>Crdat}"/></t:template>
+						</t:Column>
+						<t:Column id="Crnam" width="9rem"><Label text="Created By"/>
+							<t:template><Text text="{RiskAsmtModel>Crnam}"/></t:template>
+						</t:Column>
+						<t:Column id="Rem" width="9rem"><Label text="Note"/>
+							<t:template><Text text="{RiskAsmtModel>Rem}"/></t:template>
+						</t:Column>
+						<t:Column id="Ratingcat" width="9rem"><Label text="Rating Category"/>
+							<t:template><Text text="{RiskAsmtModel>Ratingcat}"/></t:template>
+						</t:Column>
+					</t:columns>
+				</t:Table>
+			</VBox>
+		</content>
+	</Page>
+</mvc:View>

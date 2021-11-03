@@ -1,0 +1,45 @@
+<core:FragmentDefinition class="sapUiSizeCompact" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout"
+	controllerName="Portal_Phase_III.shopfloor.controller.Shfl_ProdOrdList" xmlns:t="sap.ui.table">
+	<Dialog title="Production Order Details" type="Standard" stretch="true" afterClose="dialogAfterclose">
+		<endButton>
+			<Button text="Close" press="closeDetailsDialog"></Button>
+		</endButton>
+		<content>
+			<FlexBox class="sapUiMediumMargin" justifyContent="Center" alignContent="Center">
+				<t:Table id="table" rows="{/ComponentList}" enableCellFilter="{ui>/cellFilterOn}">
+					<t:extension>
+						<OverflowToolbar >
+							<Title id="title" text="Components in this Production Order"/>
+						</OverflowToolbar>
+					</t:extension>
+					<t:columns>
+						<t:Column id="ReservationItem" width="25%" filterProperty="ReservationItem"><Label text="Reservation Item"/>
+							<t:template><Text text="{ReservationItem}"/></t:template>
+						</t:Column>
+						<t:Column id="Material" width="25%" filterProperty="Material"><Label text="Material No."/>
+							<t:template><Text text="{Material}"/></t:template>
+						</t:Column>
+						<t:Column id="MaterialDescription" width="25%" filterProperty="Description"><Label text="MaterialDescription"/>
+							<t:template><Text text="{MaterialDescription}"/></t:template>
+						</t:Column>
+						<t:Column id="ProdPlant" width="25%" filterProperty="ProdPlant"><Label text="Prod. Plant"/>
+							<t:template><Text text="{ProdPlant}"/></t:template>
+						</t:Column>
+						<t:Column id="SystemStatus" width="25%" filterProperty="SystemStatus"><Label text="Status"/>
+							<t:template><Text text="{SystemStatus}"/></t:template>
+						</t:Column>
+						<t:Column id="ReqDate" width="25%" filterProperty="ReqDate"><Label text="Requirement Date"/>
+							<t:template><Text text="{ReqDate}"/></t:template>
+						</t:Column>
+						<t:Column id="ReqQuan" width="25%" filterProperty="ReqQuan"><Label text="Quantity"/>
+							<t:template><Text text="{ReqQuan}"/></t:template>
+						</t:Column>
+						<t:Column id="ItemCategory" width="25%" filterProperty="ItemCategory"><Label text="Item Category"/>
+							<t:template><Text text="{ItemCategory}"/></t:template>
+						</t:Column>
+					</t:columns>
+				</t:Table>
+			</FlexBox>
+		</content>
+	</Dialog>
+</core:FragmentDefinition>

@@ -1,0 +1,43 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:t="sap.ui.table" xmlns:html="http://www.w3.org/1999/xhtml" controllerName="Portal_Phase_III.ehsm.controller.Ehsm_IncidentList">
+	<Page title="Incident List" showNavButton="true" navButtonPress="goBack">
+		<headerContent>
+			<core:Icon src="sap-icon://visits" tooltip="Log Out" press="logout" color="#e40000" class="sapUiSmallMarginEnd" size="1.2em"/>
+		</headerContent>
+		<content>
+			<VBox class="sapUiMediumMargin">
+				<t:Table id="table" class="center-table" width="85%" rows="{IncidentModel>/list}" visibleRowCount="14" cellClick="onSelect">
+					<t:extension>
+						<OverflowToolbar>
+							<Title text="Incidents in Plant {/plant}"/>
+							<ToolbarSpacer/>
+							<ToolbarSeparator/>
+							<Button icon="sap-icon://add" tooltip="New Incident" press="openCreateDialog" type="Emphasized"/>
+							<ToolbarSeparator/>
+							<SearchField placeholder="Filter" value="{ui>/globalFilter}" search="filterGlobally" width="15rem"/>
+						</OverflowToolbar>
+					</t:extension>
+					<t:columns>
+						<t:Column id="Recn" width="10rem" filterProperty="Recn"><Label text="Record No."/>
+							<t:template><Text text="{IncidentModel>Recn}"/></t:template>
+						</t:Column>
+						<t:Column id="Iatype" width="10rem" filterProperty="Iatype"><Label text="Incident Type"/>
+							<t:template><Text text="{IncidentModel>Iatype}"/></t:template>
+						</t:Column>
+						<t:Column id="Dmtype" width="10rem" filterProperty="Dmtype"><Label text="Damage Type"/>
+							<t:template><Text text="{IncidentModel>Dmtype}"/></t:template>
+						</t:Column>
+						<t:Column id="Evdesc" width="10rem" filterProperty="Evdesc"><Label text="Event Description"/>
+							<t:template><Text text="{IncidentModel>Evdesc}"/></t:template>
+						</t:Column>
+						<t:Column id="Equnr" width="10rem" filterProperty="Equnr"><Label text="Equipment No."/>
+							<t:template><Text text="{IncidentModel>Equnr}"/></t:template>
+						</t:Column>
+						<t:Column id="Invresult" width="10rem" filterProperty="Invresult"><Label text="Result"/>
+							<t:template><Text text="{IncidentModel>Invresult}"/></t:template>
+						</t:Column>
+					</t:columns>
+				</t:Table>
+			</VBox>
+		</content>
+	</Page>
+</mvc:View>

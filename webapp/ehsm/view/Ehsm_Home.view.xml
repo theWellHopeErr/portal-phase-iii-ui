@@ -1,0 +1,45 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="Portal_Phase_III.ehsm.controller.Ehsm_Home"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:f="sap.f" xmlns:card="sap.f.cards">
+	<Page title="Portal Phase III">
+		<headerContent>
+			<core:Icon src="sap-icon://visits" tooltip="Log Out" press="logout" color="#e40000" class="sapUiSmallMarginEnd" size="1.2em"/>
+		</headerContent>
+		<content>
+			<VBox>
+				<HBox class="sapUiResponsiveContentPadding" justifyContent="Center">
+					<Title text="EHSM Portal" titleStyle="H1"></Title>
+				</HBox>
+				<VBox fitContainer="true" alignItems="Center" justifyContent="Center">
+					<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Chennai, Tamil Nadu" subheader="India" frameType="TwoByOne"
+						url="https://openweathermap.org/city/1264527" busy="{= weather>$/busy === true}">
+						<TileContent>
+							<HBox>
+								<Image tooltip="{weather>/description}" src="{weather>/icon}"/>
+								<FlexBox justifyContent="Center" alignItems="Center">
+									<Title titleStyle="H1" text="{weather>/temp}"></Title>
+									<Title titleStyle="H4" text=" °C"></Title>
+								</FlexBox>
+								<VBox justifyContent="Center" alignItems="End" width="100%">
+									<Title titleStyle="H5" text="{weather>/main}"></Title>
+									<Title titleStyle="H6" text="{weather>/description}"></Title>
+								</VBox>
+							</HBox>
+						</TileContent>
+					</GenericTile>
+					<f:Card class="sapUiMediumMargin" width="500px">
+						<f:header>
+							<card:Header title="Incidents" subtitle="To view, edit and create new Incidents" iconSrc="sap-icon://customer-order-entry"
+								press="goToIncidents"/>
+						</f:header>
+					</f:Card>
+					<f:Card class="sapUiMediumMargin" width="500px">
+						<f:header>
+							<card:Header title="Risk Assessment" subtitle="To view Risk Assessments from various Agents in your plant"
+								iconSrc="sap-icon://customer-order-entry" press="goToRiskAsmt"/>
+						</f:header>
+					</f:Card>
+				</VBox>
+			</VBox>
+		</content>
+	</Page>
+</mvc:View>
